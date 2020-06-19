@@ -1,0 +1,152 @@
+.header {
+    background: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    color: #272d45;
+    font-size: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.header h1{
+    color: #8f9097;
+    font-size: 16px;
+}
+
+.header h2{
+    font-size: 20.256px;
+}
+
+.margin-small{
+    margin-bottom: 8px;
+}
+
+.margin-medium{
+    margin-bottom: 16px;
+}
+
+.MuiRating-icon.MuiRating-iconEmpty {
+    color: #e8e8e8;
+}
+
+.MuiRating-icon, .MuiRating-iconEmpty {
+    font-size: 35px;
+}
+
+span.MuiRating-iconActive{
+    transform: none ;
+}
+
+.MuiRating-label {
+    margin: 0 -2px;
+}
+
+.container{
+    max-width: 736px;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    overflow: hidden;
+    text-align: left;
+}
+
+.stars{
+    margin-top: 8px;
+}
+
+input[type=text].form-control, textarea.form-control{
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+    font-size: .889rem;
+    height: 34px;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+}
+
+textarea.form-control{
+    height: 150px;
+}
+
+input[type=text]::placeholder, textarea.form-control::placeholder{
+    color: #c2c2c2;;
+}
+
+
+footer{
+    margin: 32px auto 16px;
+    padding: 0 16px;
+    width: 768px;
+    left:0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+}
+
+.btn.agree{
+    background: #00ca9b;
+    color: #ffffff;
+    line-height: 3.3;
+    padding: 0 24px;
+    width: 100%;
+    font-size: 20.256px;
+}
+
+
+.input-field{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.radio-group input[type="radio"]{
+    display: none;
+    z-index: 100;
+    position: absolute;
+    margin-left: 45px;
+}
+  
+.radio-group input[type="radio"]:checked+label{
+    background-color: #00ca9b;
+    color: #ffffff;
+}
+  
+.radioButtonLabel{
+    background-color: #d9d9d9;
+    border-radius: 4px 0 0 4px;
+    min-width: 75px;
+    padding: 8px 16px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 90;
+    height:42px;
+    margin-bottom: 0px;
+}
+
+.radioButtonLabel.no {
+    border-radius: 0 4px 4px 0;
+    margin-left: 1px;
+}
+
+.radioButtonLabel:hover {
+    background: #c2c2c2;
+}
+
+.error, .empty-field{
+    color: #ed5353;
+}
+
+input[type=text].form-control.empty-field, textarea.form-control.empty-field{
+    border: 1px solid #ed5353;
+}
+
+input[type=text].form-control.empty-field+label, textarea.form-control.empty-field+label{
+    color: #ed5353;
+}
+
+.terms a{
+    color:#ac6666;
+}
+
+.terms a:hover, .terms a:active,.terms a:visited {
+    color: #578f4f;
+}
