@@ -12,7 +12,7 @@ const initialState = {
   productStandouts: [],
   age: "",
   reason: "",
-  country: "",
+  country: "Australia",
   disabled: "disabled",
   errors: {
     quality: "",

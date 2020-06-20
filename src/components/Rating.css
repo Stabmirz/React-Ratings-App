@@ -120,6 +120,7 @@ input[type="checkbox"]:not(:checked)+ label.disabled {
     cursor: not-allowed;
     color: #8f9097;
 }
+
 input[type="checkbox"]:not(:checked)+ label.disabled:hover {
     background-color: #d9d9d9;
     border: 2px solid #d9d9d9;
