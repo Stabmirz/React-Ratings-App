@@ -23,6 +23,9 @@
 .margin-medium{
     margin-bottom: 16px;
 }
+.margin-large{
+    margin-bottom: 32px;
+}
 
 .MuiRating-icon.MuiRating-iconEmpty {
     color: #e8e8e8;
@@ -40,12 +43,31 @@ span.MuiRating-iconActive{
     margin: 0 -2px;
 }
 
+@media only screen and (min-width: 360px){
+    .main-container {
+        width: 360px;
+        margin: auto;
+    }
+}
+@media only screen and (min-width: 480px){
+    .main-container {
+        width: 480px;
+    }
+}
+@media only screen and (min-width: 768px){
+    .main-container {
+        width: 736px;
+    }
+}
+
+
+
+
 .container{
-    max-width: 736px;
-    padding: 16px;
     background-color: #ffffff;
     border-radius: 4px;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    padding: 16px;
     overflow: hidden;
     text-align: left;
 }
@@ -73,13 +95,7 @@ input[type=text]::placeholder, textarea.form-control::placeholder{
 
 
 footer{
-    margin: 32px auto 16px;
-    padding: 0 16px;
-    width: 768px;
-    left:0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
+    margin: 92px auto 16px;
     text-align: center;
 }
 
@@ -100,26 +116,23 @@ footer{
 
 .radio-group input[type="radio"]{
     display: none;
-    z-index: 100;
-    position: absolute;
-    margin-left: 45px;
 }
   
 .radio-group input[type="radio"]:checked+label{
     background-color: #00ca9b;
-    color: #ffffff;
+    border-color: #00ca9b;
+    color: #fff;
 }
   
 .radioButtonLabel{
     background-color: #d9d9d9;
+    border: 2px solid #d9d9d9;
     border-radius: 4px 0 0 4px;
     min-width: 75px;
     padding: 8px 16px;
-    text-align: center;
-    cursor: pointer;
-    z-index: 90;
-    height:42px;
     margin-bottom: 0px;
+    text-align: center;
+    transition: background .2s ease;
 }
 
 .radioButtonLabel.no {
@@ -129,6 +142,7 @@ footer{
 
 .radioButtonLabel:hover {
     background: #c2c2c2;
+    border-color: #c2c2c2;
 }
 
 .error, .empty-field{
