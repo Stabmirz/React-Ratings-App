@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Rating from "@material-ui/lab/Rating";
 import Ratings from "./Ratings";
+import Header from "./Header";
 import "./Review.css";
 
 
@@ -111,14 +112,10 @@ class Review extends Component {
     const { errors } = this.state;
     return (
       <React.Fragment>
+        {/* If form valid and agree button is pressed redirect to ratings component otherwise render review component */}
         {!this.state.isAgreed &&
         <div>
-          <header className="header margin-medium">
-            <h1 className="margin-small">
-              1815 Rose Gold Chronograph Watch - Brown Croco Strap
-            </h1>
-            <h2 className="margin-small">Review</h2>
-          </header>
+        <Header title={"Review"}/>
           <div className="main-container">
             <form onSubmit={this.handleSubmit} ref={(ref) => (this.rref = ref)}>
               <div className="container">

@@ -90,7 +90,7 @@ input[type="radio"]:checked ~ .hr-line
     display: inline-block;
 }
 
-.product-rating input[type="radio"],
+.product-rating input[type="checkbox"],
 .age-groups input[type="radio"],
 .buying-reasons input[type="radio"]
 {
@@ -98,7 +98,7 @@ input[type="radio"]:checked ~ .hr-line
     z-index: 100;
 }
   
-.product-rating input[type="radio"]:checked+label,
+.product-rating input[type="checkbox"]:checked+label,
 .age-groups input[type="radio"]:checked+label,
 .buying-reasons input[type="radio"]:checked+label
 {
@@ -142,4 +142,9 @@ select[name=rcrs-country]{
     max-width: 100%;
     padding: 7px;
     vertical-align: top;
+}
+
+.steps{
+    display: flex;
+    justify-content: space-around;
 }

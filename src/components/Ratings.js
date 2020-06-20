@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Text from './Text';
 import Review from './Review';
+import Header from './Header';
 import CountrySelector from './CountrySelector';
 import "./Rating.css";
 
@@ -8,7 +9,7 @@ const initialState = {
     quality: "",
     design:"",
     experience: "",
-    productStandouts:"",
+    productStandouts:[],
     age:"",
     reason:"",
     country:"",
@@ -31,13 +32,29 @@ class Ratings extends Component {
     }
 
     handleChange = (event) => {
-        const { name, value } = event.target;
+        const { name, value, type, checked } = event.target;
         let errors = this.state.errors;
         errors[name]="";
-        console.log(this.state);
-        this.setState({
-            [name]: value,
-        });
+
+        if(type==="checkbox"){
+            if(checked){
+                this.setState({
+                    ...this.state,
+                    // creating an array of productStandouts with all checked 
+                    productStandouts:this.state.productStandouts.concat(value) 
+                })
+            }else{
+                this.setState({
+                    ...this.state,
+                     // removing the value if any unchecked
+                    productStandouts:this.state.productStandouts.filter(productStandout => productStandout !== (value))
+                })
+            }
+        }else{
+            this.setState({
+                [name] : value
+            })
+        }
     };
 
     changeHandler = (val) => {
@@ -113,14 +130,10 @@ class Ratings extends Component {
         const { errors } = this.state;
         return ( 
             <React.Fragment>
+            {/* If form valid and next button is pressed redirect to review component otherwise render ratings component */}
             {!this.state.isSubmitted &&
                 <div>
-                    <header className="header margin-medium">
-                        <h1 className="margin-small">
-                            1815 Rose Gold Chronograph Watch - Brown Croco Strap
-                        </h1>
-                        <h2 className="margin-small">Ratings</h2>
-                    </header>
+                    <Header title={"Ratings"}/>
                     <div className="main-container">
                         <form onSubmit={this.handleSubmit} ref={(ref) => (this.rref = ref)}>
                             <div className="container">
@@ -210,37 +223,37 @@ class Ratings extends Component {
                                     <span>Product Standouts</span>
                                     <span className="margin-small">Choose up to 5 that best apply (optional)</span>
                                     <div className="product-rating">
-                                        <input type="radio" onChange={this.handleChange} id="accurate-timekeeping"name="productStandouts" value="Accurate Timekeeping" />
+                                        <input type="checkbox" onChange={this.handleChange} id="accurate-timekeeping"name="productStandouts" value="Accurate Timekeeping" />
                                         <label htmlFor="accurate-timekeeping" className="productRatingLabel">Accurate Timekeeping</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="high-quality" name="productStandouts" value="High Quality" />
+                                        <input type="checkbox" onChange={this.handleChange} id="high-quality" name="productStandouts" value="High Quality" />
                                         <label htmlFor="high-quality" className="productRatingLabel">High Quality</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="durable"name="productStandouts" value="Durable" />
+                                        <input type="checkbox" onChange={this.handleChange} id="durable"name="productStandouts" value="Durable" />
                                         <label htmlFor="durable" className="productRatingLabel">Durable</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="elegant"name="productStandouts" value="Elegant"/>
+                                        <input type="checkbox" onChange={this.handleChange} id="elegant"name="productStandouts" value="Elegant"/>
                                         <label htmlFor="elegant" className="productRatingLabel">Elegant</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="good-weight"name="productStandouts" value="Good Weight" />
+                                        <input type="checkbox" onChange={this.handleChange} id="good-weight"name="productStandouts" value="Good Weight" />
                                         <label htmlFor="good-weight" className="productRatingLabel">Good Weight</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="versatile"name="productStandouts" value="Versatile" />
+                                        <input type="checkbox" onChange={this.handleChange} id="versatile"name="productStandouts" value="Versatile" />
                                         <label htmlFor="versatile" className="productRatingLabel">Versatile</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="looks-expensive"name="productStandouts" value="Looks Expensive" />
+                                        <input type="checkbox" onChange={this.handleChange} id="looks-expensive"name="productStandouts" value="Looks Expensive" />
                                         <label htmlFor="looks-expensive" className="productRatingLabel">Looks Expensive</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="attracts-compliments"name="productStandouts" value="Attracts Compliments" />
+                                        <input type="checkbox" onChange={this.handleChange} id="attracts-compliments"name="productStandouts" value="Attracts Compliments" />
                                         <label htmlFor="attracts-compliments" className="productRatingLabel">Attracts Compliments</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="unique"name="productStandouts" value="Unique" />
+                                        <input type="checkbox" onChange={this.handleChange} id="unique"name="productStandouts" value="Unique" />
                                         <label htmlFor="unique" className="productRatingLabel">Unique</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="great-gift"name="productStandouts" value="Great Gift" />
+                                        <input type="checkbox" onChange={this.handleChange} id="great-gift"name="productStandouts" value="Great Gift" />
                                         <label htmlFor="great-gift" className="productRatingLabel">Great Gift</label>
 
-                                        <input type="radio" onChange={this.handleChange} id="great-value"name="productStandouts" value="Great Value" />
+                                        <input type="checkbox" onChange={this.handleChange} id="great-value"name="productStandouts" value="Great Value" />
                                         <label htmlFor="great-value" className="productRatingLabel">Great Value</label>
                                     </div>
 
