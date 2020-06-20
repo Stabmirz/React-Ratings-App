@@ -50,10 +50,10 @@ class Review extends Component {
     // show error message for empty input field 
     switch (name) {
       case "title":
-        errors.title = value.length < 1 ? "Please enter a title!" : "";
+        errors.title = value.length !==" " || value.length !== 0 ? "Please enter a title!" : "";
         break;
       case "review":
-        errors.review = value.length < 1 ? "Please enter a review" : "";
+        errors.review = value.length !==" " || value.length !== 0 ? "Please enter a review" : "";
         break;
       case "rating":
         errors.rating = value.length < 1 ? "Please select a rating" : "";
