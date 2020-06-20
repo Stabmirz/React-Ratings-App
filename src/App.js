@@ -5,9 +5,7 @@ import Review from "./components/Review";
 
 function App() {
   return (
-    <div className="App">
-      <Review />
-    </div>
+    <Review/>
   );
 }
 
