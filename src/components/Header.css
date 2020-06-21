@@ -1,0 +1,46 @@
+.form-steps {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -29px;
+  margin-bottom: -12px;
+  padding: 0px 40px;
+}
+
+.circle {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step:before {
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  content: "";
+  display: block;
+  height: 24px;
+  padding-top: 1px;
+  width: 24px;
+}
+
+.step-title {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  left: -5px;
+}
+
+.step.active::before {
+  background: #00ca9b;
+  color: #fff;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finished::before {
+  content: "\f00c";
+  color: white;
+  padding-left: 5px;
+  background: #00ca9b;
+  font-family: FontAwesome;
+}
